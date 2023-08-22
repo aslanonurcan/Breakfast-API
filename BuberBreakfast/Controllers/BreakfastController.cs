@@ -5,6 +5,7 @@ using BuberBreakfast.Services.Breakfasts;
 using ErrorOr;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace BuberBreakfast.Controllers
 {
@@ -27,7 +28,7 @@ namespace BuberBreakfast.Controllers
                 return Problem(requestToBreakfastResult.Errors);
 
             var breakfast = requestToBreakfastResult.Value;
-
+            
             ErrorOr<Created> createBreakfastResult = _breakfastService.CreateBreakfast(breakfast);
 
             return createBreakfastResult.Match(

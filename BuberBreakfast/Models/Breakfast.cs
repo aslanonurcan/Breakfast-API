@@ -8,7 +8,7 @@ namespace BuberBreakfast.Models
     {
         public const int MinNameLength = 3;
         public const int MaxNameLength = 50;
-        public const int MinDescriptionLength = 50;
+        public const int MinDescriptionLength = 5;
         public const int MaxDescriptionLength = 150;
 
         private Breakfast(Guid id, string name, string description, DateTime startDateTime, DateTime endDateTime, DateTime lastModifiedDateTime, List<string> savory, List<string> sweet)
